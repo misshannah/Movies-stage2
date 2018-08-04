@@ -14,4 +14,9 @@
     <string name="en_language">en-US</string>
     <string name="movie_thumbnail">Poster thumbnail</string>
     <string name="show_favourites">Favourites</string>
+    <string name="review_title">Review</string>
+    <string name="view_trailer">View Trailer</string>
+    <string name="fav_text">Mark as Favourite</string>
+    <string name="rating_title">Rating:</string>
+    <string name="author_title">Author</string>
 </resources>

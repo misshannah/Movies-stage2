@@ -20,18 +20,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_rating"
-            android:drawableLeft="@android:drawable/star_off"
-            android:padding="@dimen/text_padding"
-            android:textSize="@dimen/title_text_size"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/rating_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:padding="@dimen/text_padding"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/favourite_button"
+                    android:layout_weight=".1"
+                    android:background="@android:color/white"
+
+                    android:drawableLeft="@android:drawable/star_big_on"
+                    android:padding="@dimen/text_padding"
+                    android:text="@string/fav_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
         <LinearLayout
+            android:id="@+id/poster_row"
             android:orientation="horizontal"
             android:padding="@dimen/image_padding"
-            app:layout_constraintTop_toBottomOf="@id/tv_rating"
+            app:layout_constraintTop_toBottomOf="@id/rating_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
@@ -50,6 +67,63 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
+            <LinearLayout
+                android:id="@+id/trailer_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/poster_row"
+                android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_margin="@dimen/text_margin"
+                android:background="@color/colorAccent"
+                />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:text="@string/view_trailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/trailer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_play"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_margin="@dimen/text_margin"
+                android:background="@color/colorAccent"
+                />
+            <TextView
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:text="@string/review_title"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_review"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                android:textSize="@dimen/description_text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_reviewAuthor"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                android:textSize="@dimen/description_text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>

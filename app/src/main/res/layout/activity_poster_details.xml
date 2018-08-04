@@ -17,14 +17,28 @@
             android:textSize="@dimen/title_text_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tv_rating"
-            android:drawableLeft="@android:drawable/star_off"
             android:padding="@dimen/text_padding"
+            android:layout_weight="1"
             android:textSize="@dimen/title_text_size"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/favourite_button"
+                android:layout_weight=".1"
+                android:background="@android:color/white"
+
+                android:drawableLeft="@android:drawable/star_big_on"
+                android:padding="@dimen/text_padding"
+                android:text="@string/fav_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:padding="@dimen/image_padding"
@@ -61,7 +75,7 @@
                 android:layout_marginLeft="@dimen/text_margin"
                 android:layout_marginRight="@dimen/text_margin"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:text="View Trailer"
+                android:text="@string/view_trailer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.support.v7.widget.AppCompatImageButton
@@ -83,10 +97,18 @@
                 android:layout_marginRight="@dimen/text_margin"
                 style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
-                android:text="Reviews"
+                android:text="@string/review_title"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tv_review"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                android:textSize="@dimen/description_text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_reviewAuthor"
+                android:textStyle="bold"
                 android:layout_marginLeft="@dimen/text_margin"
                 android:layout_marginRight="@dimen/text_margin"
                 android:textSize="@dimen/description_text_size"

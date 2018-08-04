@@ -85,13 +85,7 @@ public class Movie {
             return results;
         }
     }
-    public static class TrailerResult {
-        private List<Movie> results;
 
-        public List<Movie> getTrailerResult() {
-            return results;
-        }
-    }
     public static class ReviewResult {
         private List<Movie> results;
 
@@ -100,11 +94,4 @@ public class Movie {
         }
     }
 
-    public class Response {
-        private String key;
-
-        public String getKey() {
-            return key;
-        }
-    }
 }
