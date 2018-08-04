@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_title"
+            android:background="@color/colorAccent"
+            android:padding="@dimen/text_padding"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:drawableLeft="@android:drawable/star_off"
+            android:padding="@dimen/text_padding"
+            android:textSize="@dimen/title_text_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="@dimen/image_padding"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_weight="1"
+                android:contentDescription="@string/movie_thumbnail"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/image_thumbnail_height"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_weight="2"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/description_text_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

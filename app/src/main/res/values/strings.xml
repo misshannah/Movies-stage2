@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Movies-Stage2</string>
+    <string name="app_name">MovieStage2</string>
+    <string name="appbar_scrolling_view_behavior">scroll</string>
+    <string name="movie_url_base">"http://api.themoviedb.org/3"</string>
+    <string name="movie_api_key">24a57f02f6be9e6087dcdd74bd05f94f</string>
+    <string name="image_base_url">"https://image.tmdb.org/t/p/w500/"</string>
+    <string name="movie_rating">Rating</string>
+    <string name="movie_title_and_year">Title and year</string>
+    <string name="movie_title">Title</string>
+    <string name="sort_popular">Most Popular</string>
+    <string name="sort_rating">Best Rated</string>
+    <string name="sort_title">Select Sort Order</string>
+    <string name="sort_by_date">created_at.asc</string>
+    <string name="en_language">en-US</string>
+    <string name="movie_thumbnail">Poster thumbnail</string>
 </resources>
