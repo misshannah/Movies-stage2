@@ -6,8 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
+import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -69,6 +74,35 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    private void ratingOrder() {
+        //Using the retrofit library for top rated movies
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint(getString(R.string.movie_url_base))
+                .setRequestInterceptor(new RequestInterceptor() {
+                    @Override
+                    public void intercept(RequestFacade request) {
+                        request.addEncodedQueryParam("api_key", getString(R.string.movie_api_key));
+                        request.addEncodedQueryParam("language", getString(R.string.en_language));
+                        request.addEncodedQueryParam("sort_by", getString(R.string.sort_by_date));
+                    }
+                })
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+        RatedMoviesInterfaceApi sortRating = restAdapter.create(RatedMoviesInterfaceApi.class);
+        sortRating.getTopRatedMovies(new Callback<Movie.RatedMovieResult>() {
+            @Override
+            public void success(Movie.RatedMovieResult movieResult, Response response) {
+                mAdapter.setMovieList(movieResult.getRatedResults());
+                Log.i("rating output", movies.toString());
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                error.printStackTrace();
+            }
+        });
+    }
+
     private void popularOrder() {
         //Using the retrofit library for popular movies
         RestAdapter restAdapter = new RestAdapter.Builder()
@@ -95,6 +129,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void showFavourites() {
+    }
+
+    //Show Settings Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // bring up the settings dialog if the settings menu option is selected
+        int id = item.getItemId();
+        if (id == R.id.action_popular) {
+            popularOrder();
+            return true;
+        }
+        if (id == R.id.action_rating) {
+            ratingOrder();
+            return true;
+        }
+        if (id == R.id.action_favourites) {
+            showFavourites();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onStop() {
         super.onStop();

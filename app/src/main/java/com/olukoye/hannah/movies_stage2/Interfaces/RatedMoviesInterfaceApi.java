@@ -1,4 +1,6 @@
-package com.olukoye.hannah.movies_stage2;
+package com.olukoye.hannah.movies_stage2.Interfaces;
+
+import com.olukoye.hannah.movies_stage2.Movie;
 
 import retrofit.Callback;
 import retrofit.http.GET;

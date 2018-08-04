@@ -36,19 +36,63 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/movie_thumbnail"
                 android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
+                android:layout_marginLeft="@dimen/text_margin"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/image_thumbnail_height"/>
 
             <TextView
                 android:id="@+id/tv_description"
                 android:layout_weight="2"
-                android:layout_margin="@dimen/text_margin"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
                 android:textSize="@dimen/description_text_size"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_margin="@dimen/text_margin"
+                android:background="@color/colorAccent"
+                />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:text="View Trailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/trailer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_play"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_margin="@dimen/text_margin"
+                android:background="@color/colorAccent"
+                />
+            <TextView
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:text="Reviews"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_review"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginRight="@dimen/text_margin"
+                android:textSize="@dimen/description_text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

@@ -2,12 +2,15 @@ package com.olukoye.hannah.movies_stage2;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.json.JSONArray;
+
 import java.util.List;
 
 
 public class Movie {
 
-
+    @SerializedName("id")
+    private String id;
     @SerializedName("poster_path")
     private String poster;
     @SerializedName("overview")
@@ -17,6 +20,16 @@ public class Movie {
     private String backdrop;
     @SerializedName("vote_average")
     private String rating;
+
+    private JSONArray trailerResults;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -72,5 +85,26 @@ public class Movie {
             return results;
         }
     }
+    public static class TrailerResult {
+        private List<Movie> results;
 
+        public List<Movie> getTrailerResult() {
+            return results;
+        }
+    }
+    public static class ReviewResult {
+        private List<Movie> results;
+
+        public List<Movie> getReviewResult() {
+            return results;
+        }
+    }
+
+    public class Response {
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
+    }
 }

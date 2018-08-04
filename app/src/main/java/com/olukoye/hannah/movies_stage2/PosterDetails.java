@@ -1,14 +1,28 @@
 package com.olukoye.hannah.movies_stage2;
 
 import android.databinding.DataBindingUtil;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.olukoye.hannah.movies_stage2.databinding.ActivityPosterDetailsBinding;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
+    String title,description,rating,posterUrl,id,video_key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +31,79 @@ public class PosterDetails extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            String title = bundle.getString("title");
-            String description = bundle.getString("description");
-            String rating = bundle.getString("rating");
-            String posterUrl = bundle.getString("posterurl");
+            title = bundle.getString("title");
+            description = bundle.getString("description");
+            rating = bundle.getString("rating");
+            posterUrl = bundle.getString("posterurl");
+            id = bundle.getString("movie_id");
             posterBinding.tvTitle.setText(title);
             posterBinding.tvRating.setText(rating);
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
             posterBinding.tvDescription.setText(description);
         }
-
+        new showTrailer().execute();
     }
+
+    public class showTrailer extends AsyncTask<Void, Void, String> {
+        protected void onPreExecute() {
+            Log.i("Background Task","Loading Trailer details");
+        }
+
+        protected String doInBackground(Void... urls) {
+            try {
+                ///movie/{movie_id}/videos"
+                URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
+                        id + "/videos?"+ "api_key=" + getString(R.string.movie_api_key));
+                Log.i("Url passed", String.valueOf(url));
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+                urlConnection.setRequestMethod("GET");
+                try {
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(line).append("\n");
+                    }
+                    bufferedReader.close();
+                    return stringBuilder.toString();
+                } finally {
+                    urlConnection.disconnect();
+                }
+            } catch (Exception e) {
+                Log.e("ERROR", e.getMessage(), e);
+
+                if (e.getMessage().contains("Unable to resolve host")) {
+                    return e.getMessage();
+                } else if (e.getMessage().contains("DOCTYPE HTML")) {
+                    return e.getMessage();
+                } else if (e.getMessage().contains("unreachable")) {
+                    return e.getMessage();
+                } else {
+                    return null;
+                }
+            }
+        }
+
+        protected void onPostExecute(String response) {
+
+            try {
+                JSONObject details = (JSONObject) new JSONTokener(response).nextValue();
+
+                JSONArray videoResults = details.getJSONArray("results");
+                JSONObject videoData = videoResults.getJSONObject(0);
+                video_key = videoData.getString("key");
+
+                Log.i("YOUTUBE KEY", video_key);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+
 }

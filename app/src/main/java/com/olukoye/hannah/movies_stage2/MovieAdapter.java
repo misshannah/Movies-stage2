@@ -53,6 +53,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder>
             public void onClick(View v) {
                 Log.i("Open Movie details", String.valueOf(movie.getDescription()));
                 Intent openPoster = new Intent(mContext, PosterDetails.class);
+                openPoster.putExtra("movie_id",movie.getId());
                 openPoster.putExtra("title", movie.getTitle());
                 openPoster.putExtra("description",movie.getDescription());
                 openPoster.putExtra("rating",movie.getRating());
