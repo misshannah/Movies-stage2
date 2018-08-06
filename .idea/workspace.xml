@@ -5,18 +5,111 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5bdd02c3-d3bc-4093-8e45-ccfde0e449b5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_db_1_0_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_db_framework_1_0_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_room_common_1_0_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_room_runtime_1_0_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieDatabase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MoviesTable.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-02-22-59-59-958.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-02-22-59-59-958.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-02-23-00-36-459.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-02-23-00-36-459.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-50-46-327.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-50-46-327.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-51-22-233.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-51-22-233.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-53-42-284.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-53-42-284.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-53-56-297.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-53-56-297.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-59-27-333.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-59-27-333.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-59-42-197.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-13-59-42-197.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-17-52-978.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-17-52-978.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-18-15-742.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-18-15-742.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-21-34-404.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-21-34-404.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-21-46-821.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-21-46-821.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-27-32-735.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-27-32-735.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-30-04-265.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-30-04-265.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-32-22-890.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-32-22-890.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-33-36-857.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-33-36-857.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-49-30-239.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-14-49-30-239.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-17-54-33-119.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-17-54-33-119.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-06-20-263.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-06-20-263.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-07-19-363.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-07-19-363.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-29-14-632.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-29-14-632.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-30-32-446.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-30-32-446.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-36-32-766.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-36-32-766.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-43-09-908.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-43-09-908.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-48-41-124.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-18-48-41-124.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-00-31-080.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-00-31-080.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-02-18-639.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-02-18-639.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-03-24-021.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-03-24-021.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-04-52-937.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-04-52-937.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-05-32-502.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-05-32-502.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-06-32-015.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-06-32-015.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-10-33-279.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-10-33-279.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-11-49-380.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-19-11-49-380.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-09-36-261.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-09-36-261.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-13-37-008.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-13-37-008.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-15-09-387.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-15-09-387.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-21-41-647.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-21-41-647.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-27-57-862.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-27-57-862.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-43-03-619.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-43-03-619.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-52-10-750.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-08-04-22-52-10-750.rawproto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew.bat" afterPath="$PROJECT_DIR$/gradlew.bat" />
     </list>
@@ -42,70 +135,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_poster_details.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+            <state relative-caret-position="257">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#738#762#0" expanded="true" />
-                <element signature="e#1266#1287#0" expanded="true" />
-                <element signature="e#1371#1395#0" expanded="true" />
-                <element signature="e#1809#1830#0" expanded="true" />
-                <element signature="e#1864#1882#0" expanded="true" />
-                <element signature="e#2162#2184#0" expanded="true" />
-                <element signature="e#2504#2529#0" expanded="true" />
-                <element signature="e#2567#2597#0" expanded="true" />
-                <element signature="e#2636#2667#0" expanded="true" />
-                <element signature="e#2822#2842#0" expanded="true" />
-                <element signature="e#2876#2906#0" expanded="true" />
-                <element signature="e#3432#3455#0" expanded="true" />
-                <element signature="e#3494#3514#0" expanded="true" />
-                <element signature="e#3655#3675#0" expanded="true" />
-                <element signature="e#3719#3739#0" expanded="true" />
-                <element signature="e#3831#3853#0" expanded="true" />
-                <element signature="e#4279#4299#0" expanded="true" />
-                <element signature="e#4343#4363#0" expanded="true" />
-                <element signature="e#4491#4514#0" expanded="true" />
-                <element signature="e#4553#4573#0" expanded="true" />
-                <element signature="e#4713#4733#0" expanded="true" />
-                <element signature="e#4777#4797#0" expanded="true" />
-                <element signature="e#4941#4963#0" expanded="true" />
-                <element signature="e#5127#5147#0" expanded="true" />
-                <element signature="e#5191#5211#0" expanded="true" />
-                <element signature="e#5245#5275#0" expanded="true" />
-                <element signature="e#5539#5559#0" expanded="true" />
-                <element signature="e#5603#5623#0" expanded="true" />
-                <element signature="e#5657#5687#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3236#3270#0" expanded="true" />
+                <element signature="e#3311#3772#0" expanded="true" />
+                <element signature="e#3499#3532#0" expanded="true" />
+                <element signature="e#3600#3631#0" expanded="true" />
+                <element signature="e#3698#3730#0" expanded="true" />
+                <element signature="e#3771#3772#0" expanded="true" />
+                <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#4615#4649#0" expanded="true" />
+                <element signature="e#4690#4953#0" expanded="true" />
+                <element signature="e#4878#4911#0" expanded="true" />
+                <element signature="e#4952#4953#0" expanded="true" />
+                <element signature="e#5655#6057#0" expanded="true" />
+                <element signature="e#6056#6057#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_poster_details.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="116" column="0" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="116" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="PosterDetails.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
+      <file leaf-file-name="MoviesTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MoviesTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1573#1605#0" expanded="true" />
-                <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
-                <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
-                <element signature="e#8295#8327#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Movie.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java">
+      <file leaf-file-name="PosterDetails.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="215">
+              <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1725#1757#0" expanded="true" />
+                <element signature="e#2137#3000#0" expanded="true" />
+                <element signature="e#2272#2955#0" expanded="true" />
+                <element signature="e#2954#2955#0" expanded="true" />
+                <element signature="e#2999#3000#0" expanded="true" />
+                <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+                <element signature="e#3451#3485#0" expanded="true" />
+                <element signature="e#3554#3587#0" expanded="true" />
+                <element signature="e#5359#6579#0" expanded="true" />
+                <element signature="e#6578#6579#0" expanded="true" />
+                <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
+                <element signature="e#7108#7142#0" expanded="true" />
+                <element signature="e#7212#7245#0" expanded="true" />
+                <element signature="e#9139#9171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,6 +228,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -1881,25 +1992,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home_page.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieViewHolder.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/MoviesInterfaceApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/RatedMoviesInterfaceApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/TrailersInterfaceApi.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MoviesTable.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieDatabase.java" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess_Impl.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/FavMovieAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_row_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1925,7 +2042,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2074,66 +2191,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Movies-stage2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Movies-stage2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout-land" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Movies-stage2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Movies-stage2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2204,9 +2261,36 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Movies-stage2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Movies-stage2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2216,9 +2300,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.olukoye.hannah.movies_stage2" />
       <recent name="com.olukoye.hannah.movies_stage2.Interfaces" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2" />
     </key>
@@ -2306,7 +2392,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533412569028" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533579064884" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2354,7 +2440,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533412569028" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533579064884" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2537,7 +2623,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533412569029" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533579064885" />
       </method>
     </configuration>
     <list size="1">
@@ -2564,6 +2650,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -2615,35 +2704,43 @@
       <option name="project" value="LOCAL" />
       <updated>1533401878665</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: Add link to open youtube and display the reviews on the poster details.&#10;&#10;The layout files have new views as required. User can now play videos and read reviews.&#10;Pending work on the favourite button.">
+      <created>1533412706729</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1533412706730</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31987077" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30878186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32577905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3243626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2651,7 +2748,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2662,7 +2758,8 @@
     <MESSAGE value="docs: Adding updated source code.&#10;Initial commit." />
     <MESSAGE value="feat: Adding the trailer and reviews in the UI.&#10;Pending work on the link to open youtube and display the reviews." />
     <MESSAGE value="feat: Add video trailer and reviews to the UI.&#10;Pending work on the link to open youtube and display the reviews." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add video trailer and reviews to the UI.&#10;Pending work on the link to open youtube and display the reviews." />
+    <MESSAGE value="feat: Add link to open youtube and display the reviews on the poster details.&#10;&#10;The layout files have new views as required. User can now play videos and read reviews.&#10;Pending work on the favourite button." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add link to open youtube and display the reviews on the poster details.&#10;&#10;The layout files have new views as required. User can now play videos and read reviews.&#10;Pending work on the favourite button." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2671,9 +2768,204 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="160" column="77" lean-forward="false" selection-start-line="160" selection-start-column="77" selection-end-line="160" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1725#1757#0" expanded="true" />
+            <element signature="e#2137#3000#0" expanded="true" />
+            <element signature="e#2272#2955#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
+            <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#3451#3485#0" expanded="true" />
+            <element signature="e#3554#3587#0" expanded="true" />
+            <element signature="e#5359#6579#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
+            <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#7108#7142#0" expanded="true" />
+            <element signature="e#7212#7245#0" expanded="true" />
+            <element signature="e#9139#9171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1725#1757#0" expanded="true" />
+            <element signature="e#2137#3000#0" expanded="true" />
+            <element signature="e#2272#2955#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
+            <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#3451#3485#0" expanded="true" />
+            <element signature="e#3554#3587#0" expanded="true" />
+            <element signature="e#5359#6579#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
+            <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#7108#7142#0" expanded="true" />
+            <element signature="e#7212#7245#0" expanded="true" />
+            <element signature="e#9139#9171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
           <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2701,10 +2993,20 @@
           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1573#1605#0" expanded="true" />
+            <element signature="e#1725#1757#0" expanded="true" />
+            <element signature="e#2137#3000#0" expanded="true" />
+            <element signature="e#2272#2955#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
             <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#3451#3485#0" expanded="true" />
+            <element signature="e#3554#3587#0" expanded="true" />
+            <element signature="e#5359#6579#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
             <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
-            <element signature="e#8295#8327#0" expanded="true" />
+            <element signature="e#7108#7142#0" expanded="true" />
+            <element signature="e#7212#7245#0" expanded="true" />
+            <element signature="e#9139#9171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2713,7 +3015,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
           <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2741,21 +3058,21 @@
           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1573#1605#0" expanded="true" />
+            <element signature="e#1725#1757#0" expanded="true" />
+            <element signature="e#2137#3000#0" expanded="true" />
+            <element signature="e#2272#2955#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
             <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#3451#3485#0" expanded="true" />
+            <element signature="e#3554#3587#0" expanded="true" />
+            <element signature="e#5359#6579#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
             <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
-            <element signature="e#8295#8327#0" expanded="true" />
+            <element signature="e#7108#7142#0" expanded="true" />
+            <element signature="e#7212#7245#0" expanded="true" />
+            <element signature="e#9139#9171#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -2771,22 +3088,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -2809,7 +3110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2849,17 +3149,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/TrailersInterfaceApi.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/row_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess_Impl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1638">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MoviesTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1725#1757#0" expanded="true" />
+            <element signature="e#2137#3000#0" expanded="true" />
+            <element signature="e#2272#2955#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2999#3000#0" expanded="true" />
+            <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#3451#3485#0" expanded="true" />
+            <element signature="e#3554#3587#0" expanded="true" />
+            <element signature="e#5359#6579#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
+            <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
+            <element signature="e#7108#7142#0" expanded="true" />
+            <element signature="e#7212#7245#0" expanded="true" />
+            <element signature="e#9139#9171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2876,47 +3265,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MovieAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="52" column="41" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="52" selection-end-column="41" />
+        <state relative-caret-position="310">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1505#2163#0" expanded="false" />
-            <element signature="e#2162#2163#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="66" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="66" />
+        <state relative-caret-position="315">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/row_layout.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/FavMovieAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="708">
+          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/row_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -2924,78 +3300,67 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="e#631#655#0" expanded="true" />
-            <element signature="e#1095#1119#0" expanded="true" />
-            <element signature="e#1493#1514#0" expanded="true" />
-            <element signature="e#1544#1562#0" expanded="true" />
-            <element signature="e#3301#3323#0" expanded="true" />
-            <element signature="e#4411#4433#0" expanded="true" />
-            <element signature="e#5009#5029#0" expanded="true" />
-            <element signature="e#5073#5093#0" expanded="true" />
-            <element signature="e#5127#5157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_row_layout.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_poster_details.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="e#738#762#0" expanded="true" />
-            <element signature="e#1266#1287#0" expanded="true" />
-            <element signature="e#1371#1395#0" expanded="true" />
-            <element signature="e#1809#1830#0" expanded="true" />
-            <element signature="e#1864#1882#0" expanded="true" />
-            <element signature="e#2162#2184#0" expanded="true" />
-            <element signature="e#2504#2529#0" expanded="true" />
-            <element signature="e#2567#2597#0" expanded="true" />
-            <element signature="e#2636#2667#0" expanded="true" />
-            <element signature="e#2822#2842#0" expanded="true" />
-            <element signature="e#2876#2906#0" expanded="true" />
-            <element signature="e#3432#3455#0" expanded="true" />
-            <element signature="e#3494#3514#0" expanded="true" />
-            <element signature="e#3655#3675#0" expanded="true" />
-            <element signature="e#3719#3739#0" expanded="true" />
-            <element signature="e#3831#3853#0" expanded="true" />
-            <element signature="e#4279#4299#0" expanded="true" />
-            <element signature="e#4343#4363#0" expanded="true" />
-            <element signature="e#4491#4514#0" expanded="true" />
-            <element signature="e#4553#4573#0" expanded="true" />
-            <element signature="e#4713#4733#0" expanded="true" />
-            <element signature="e#4777#4797#0" expanded="true" />
-            <element signature="e#4941#4963#0" expanded="true" />
-            <element signature="e#5127#5147#0" expanded="true" />
-            <element signature="e#5191#5211#0" expanded="true" />
-            <element signature="e#5245#5275#0" expanded="true" />
-            <element signature="e#5539#5559#0" expanded="true" />
-            <element signature="e#5603#5623#0" expanded="true" />
-            <element signature="e#5657#5687#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/PosterDetails.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state relative-caret-position="504">
+          <caret line="90" column="14" lean-forward="false" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1573#1605#0" expanded="true" />
-            <element signature="class#showTrailer#0;class#PosterDetails#0" expanded="false" />
-            <element signature="class#getReviews#0;class#PosterDetails#0" expanded="false" />
-            <element signature="e#8295#8327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/Interfaces/DaoAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_poster_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="116" column="0" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/olukoye/hannah/movies_stage2/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3270#0" expanded="true" />
+            <element signature="e#3311#3772#0" expanded="true" />
+            <element signature="e#3499#3532#0" expanded="true" />
+            <element signature="e#3600#3631#0" expanded="true" />
+            <element signature="e#3698#3730#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="method#popularOrder#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4615#4649#0" expanded="true" />
+            <element signature="e#4690#4953#0" expanded="true" />
+            <element signature="e#4878#4911#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5655#6057#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
           </folding>
         </state>
       </provider>

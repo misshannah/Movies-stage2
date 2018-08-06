@@ -19,4 +19,5 @@
     <string name="fav_text">Mark as Favourite</string>
     <string name="rating_title">Rating:</string>
     <string name="author_title">Author</string>
+    <string name="name_format">Title %1$s</string>
 </resources>

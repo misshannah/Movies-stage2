@@ -21,7 +21,6 @@ public class Movie {
     @SerializedName("vote_average")
     private String rating;
 
-    private JSONArray trailerResults;
 
     public String getId() {
         return id;
@@ -86,10 +85,10 @@ public class Movie {
         }
     }
 
-    public static class ReviewResult {
+    public static class FavResult {
         private List<Movie> results;
 
-        public List<Movie> getReviewResult() {
+        public List<Movie> getFavResult() {
             return results;
         }
     }

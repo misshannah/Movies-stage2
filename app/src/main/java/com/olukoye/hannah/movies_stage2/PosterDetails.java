@@ -1,5 +1,6 @@
 package com.olukoye.hannah.movies_stage2;
 
+import android.arch.persistence.room.Room;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -26,8 +27,9 @@ import java.net.URL;
 
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
-    String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
-
+    private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
+    private static final String DATABASE_NAME = "movies_db";
+    private MovieDatabase movieDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +48,31 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvDescription.setText(description);
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
-                                                                 @Override
-                                                                 public void onClick(View v) {
+            movieDatabase = Room.databaseBuilder(getApplicationContext(),
+                    MovieDatabase.class, DATABASE_NAME)
+                    .build();
 
-                                                                 }
-                                                             }
-                );
+
+            posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     new Thread(new Runnable() {
+                         @Override
+                         public void run() {
+                             MoviesTable moviestable = new MoviesTable();
+                             moviestable.setMovieId( id);
+                             moviestable.setMovieName(title);
+                             movieDatabase.daoAccess () . insertOnlySingleMovie (moviestable);
+
+                             String itemFavourited = movieDatabase.daoAccess()
+                                     .fetchOneMoviesbyMovieId(Integer.parseInt(id)).getMovieName();
+                             Log.i("Added to DB", itemFavourited);
+
+                         }
+                     }) .start();
+                 }
+             }
+            );
             new showTrailer().execute();
             new getReviews().execute();
         }

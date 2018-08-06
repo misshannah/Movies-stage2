@@ -1,14 +1,17 @@
 package com.olukoye.hannah.movies_stage2;
 
+import android.arch.persistence.room.Room;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
@@ -24,10 +27,14 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+
 public class MainActivity extends AppCompatActivity {
     private MovieAdapter mAdapter;
     private ActivityMainBinding binding;
     private List<Movie> movies;
+    private static final String DATABASE_NAME = "movies_db";
+    private MovieDatabase movieDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mAdapter.setMovieList(movies);
+
+
+        movieDatabase = Room.databaseBuilder(getApplicationContext(),
+                MovieDatabase.class, DATABASE_NAME)
+                .build();
+
 
         if (savedInstanceState == null){
             popularOrder();
@@ -131,6 +144,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showFavourites() {
+
+        new Thread(new Runnable() {
+        @Override
+        public void run() {
+            List<MoviesTable> favMovies = movieDatabase.daoAccess().fetchAllMovies();
+
+            for (int i = 0; i < 25; i++) {
+                favMovies.add(new MoviesTable());
+            }
+            //mAdapter.setMovieList(favMovies);
+
+            Log.i("New List", favMovies.get(1).getMovieName().toString());
+
+
+        }
+        }) .start();
+
+
     }
 
     //Show Settings Menu
