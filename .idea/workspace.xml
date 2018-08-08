@@ -2252,7 +2252,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765805858" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765858236" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2300,7 +2300,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765805860" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765858237" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2483,7 +2483,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765805896" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533765858242" />
       </method>
     </configuration>
     <list size="1">
@@ -2585,7 +2585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533748181387</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: Failing to get list into recycler view.&#10;&#10;Trying to fix this.">
+      <created>1533765851712</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533765851713</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2634,7 +2641,8 @@
     <MESSAGE value="feat: Add video trailer and reviews to the UI.&#10;Pending work on the link to open youtube and display the reviews." />
     <MESSAGE value="feat: Add link to open youtube and display the reviews on the poster details.&#10;&#10;The layout files have new views as required. User can now play videos and read reviews.&#10;Pending work on the favourite button." />
     <MESSAGE value="feat: Add Room Database to store favourite movies.&#10;&#10;Pending work on fetching the stored data from the DB." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add Room Database to store favourite movies.&#10;&#10;Pending work on fetching the stored data from the DB." />
+    <MESSAGE value="fix: Failing to get list into recycler view.&#10;&#10;Trying to fix this." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Failing to get list into recycler view.&#10;&#10;Trying to fix this." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
