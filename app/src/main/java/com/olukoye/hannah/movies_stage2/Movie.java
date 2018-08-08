@@ -86,10 +86,10 @@ public class Movie {
     }
 
     public static class FavResult {
-        private List<Movie> results;
+        private List<Movie> name;
 
         public List<Movie> getFavResult() {
-            return results;
+            return name;
         }
     }
 

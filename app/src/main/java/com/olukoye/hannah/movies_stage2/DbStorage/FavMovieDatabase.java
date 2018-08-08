@@ -12,11 +12,5 @@ import android.content.Context;
 public abstract class FavMovieDatabase extends RoomDatabase {
     public abstract DaoAccess daoAccess() ;
 
-    private static FavMovieDatabase INSTANCE;
-
-    public static void destroyInstance() {
-        INSTANCE = null;
-    }
-
 }
 

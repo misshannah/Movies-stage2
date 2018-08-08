@@ -1,8 +1,12 @@
 package com.olukoye.hannah.movies_stage2;
 
+import android.annotation.TargetApi;
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +18,7 @@ import android.widget.Toast;
 
 import com.olukoye.hannah.movies_stage2.DbStorage.FavMovieDatabase;
 import com.olukoye.hannah.movies_stage2.DbStorage.FavMoviesTable;
+import com.olukoye.hannah.movies_stage2.FavMovie;
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
@@ -145,23 +150,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void showFavourites() {
 
+
         new Thread(new Runnable() {
-        @Override
-        public void run() {
-            List<FavMoviesTable> favMovies = favmovieDatabase.daoAccess().fetchAllMovies();
+            @Override
+            public void run() {
 
-            for (int i = 0; i < 25; i++) {
-                favMovies.add(new FavMoviesTable());
+                List<FavMovie> favMovies = favmovieDatabase.daoAccess().fetchAllMovies();
+                Log.i("Sample List Ids ", String.valueOf(favMovies.get(0)));
+
+                Intent openFavourites = new Intent(getApplication(), FavouriteMoviesActivity.class);
+                openFavourites.putExtra("movie_id",favmovieDatabase.daoAccess().fetchAllMoviesold().get(0).getMovieId().toString());
+
+                startActivity(openFavourites);
+
             }
-            //mAdapter.setMovieList(favMovies);
-
-            Log.i("New List", favMovies.get(1).getMovieName().toString());
-
-
-        }
-        }) .start();
-
-
+        }).start();
     }
 
     //Show Settings Menu
@@ -212,7 +215,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onDestroy() {
-        FavMovieDatabase.destroyInstance();
         super.onDestroy();
     }
 }
