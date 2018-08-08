@@ -1,6 +1,7 @@
 package com.olukoye.hannah.movies_stage2;
 
 import android.arch.persistence.room.Room;
+import android.arch.persistence.room.migration.Migration;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -10,8 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
+import com.olukoye.hannah.movies_stage2.DbStorage.FavMoviesTable;
+import com.olukoye.hannah.movies_stage2.DbStorage.FavMovieDatabase;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityPosterDetailsBinding;
 import com.squareup.picasso.Picasso;
 
@@ -24,12 +26,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
     private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
-    private static final String DATABASE_NAME = "movies_db";
-    private MovieDatabase movieDatabase;
+    private static final String DATABASE_NAME = "movies_db2";
+    private FavMovieDatabase favmovieDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +53,8 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvDescription.setText(description);
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            movieDatabase = Room.databaseBuilder(getApplicationContext(),
-                    MovieDatabase.class, DATABASE_NAME)
+            favmovieDatabase = Room.databaseBuilder(getApplicationContext(),
+                    FavMovieDatabase.class, DATABASE_NAME)
                     .build();
 
 
@@ -59,12 +64,15 @@ public class PosterDetails extends AppCompatActivity {
                      new Thread(new Runnable() {
                          @Override
                          public void run() {
-                             MoviesTable moviestable = new MoviesTable();
-                             moviestable.setMovieId( id);
-                             moviestable.setMovieName(title);
-                             movieDatabase.daoAccess () . insertOnlySingleMovie (moviestable);
 
-                             String itemFavourited = movieDatabase.daoAccess()
+                             FavMoviesTable favmoviestable = new FavMoviesTable();
+                             favmoviestable.setMovieId( id);
+                             favmoviestable.setMovieName(title);
+                             favmovieDatabase.daoAccess ()
+                                     .insertOnlySingleMovie
+                                             (favmoviestable);
+
+                             String itemFavourited = favmovieDatabase.daoAccess()
                                      .fetchOneMoviesbyMovieId(Integer.parseInt(id)).getMovieName();
                              Log.i("Added to DB", itemFavourited);
 

@@ -5,15 +5,15 @@ import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.olukoye.hannah.movies_stage2.DbStorage.FavMovieDatabase;
+import com.olukoye.hannah.movies_stage2.DbStorage.FavMoviesTable;
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter mAdapter;
     private ActivityMainBinding binding;
     private List<Movie> movies;
-    private static final String DATABASE_NAME = "movies_db";
-    private MovieDatabase movieDatabase;
+    private static final String DATABASE_NAME = "movies_db2";
+    private FavMovieDatabase favmovieDatabase;
 
 
     @Override
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.setMovieList(movies);
 
 
-        movieDatabase = Room.databaseBuilder(getApplicationContext(),
-                MovieDatabase.class, DATABASE_NAME)
+        favmovieDatabase = Room.databaseBuilder(getApplicationContext(),
+                FavMovieDatabase.class, DATABASE_NAME)
                 .build();
 
 
@@ -148,10 +148,10 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
         @Override
         public void run() {
-            List<MoviesTable> favMovies = movieDatabase.daoAccess().fetchAllMovies();
+            List<FavMoviesTable> favMovies = favmovieDatabase.daoAccess().fetchAllMovies();
 
             for (int i = 0; i < 25; i++) {
-                favMovies.add(new MoviesTable());
+                favMovies.add(new FavMoviesTable());
             }
             //mAdapter.setMovieList(favMovies);
 
@@ -195,10 +195,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 
     @Override
     protected void onPause() {
@@ -213,5 +209,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+    @Override
+    protected void onDestroy() {
+        FavMovieDatabase.destroyInstance();
+        super.onDestroy();
     }
 }

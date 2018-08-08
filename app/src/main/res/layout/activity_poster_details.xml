@@ -28,14 +28,14 @@
             android:textSize="@dimen/title_text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-            <Button
+            <ToggleButton
                 android:id="@+id/favourite_button"
                 android:layout_weight=".1"
                 android:background="@android:color/white"
-
                 android:drawableLeft="@android:drawable/star_big_on"
                 android:padding="@dimen/text_padding"
-                android:text="@string/fav_text"
+                android:textOff="@string/fav_text"
+                android:textOn="@string/fav_text_selected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

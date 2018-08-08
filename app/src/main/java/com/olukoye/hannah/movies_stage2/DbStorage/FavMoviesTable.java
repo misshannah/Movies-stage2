@@ -1,17 +1,17 @@
-package com.olukoye.hannah.movies_stage2;
+package com.olukoye.hannah.movies_stage2.DbStorage;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity
-public class MoviesTable {
+public class FavMoviesTable {
     @NonNull
     @PrimaryKey
     private String movieId;
     private String movieName;
 
-    public MoviesTable() {
+    public FavMoviesTable() {
     }
 
     public String getMovieId() { return movieId; }
