@@ -1,7 +1,5 @@
 package com.olukoye.hannah.movies_stage2;
 
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.migration.Migration;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -12,8 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.olukoye.hannah.movies_stage2.DbStorage.FavMoviesTable;
-import com.olukoye.hannah.movies_stage2.DbStorage.FavMovieDatabase;
+import com.olukoye.hannah.movies_stage2.database.AppDatabase;
+import com.olukoye.hannah.movies_stage2.database.DaoAccess;
+import com.olukoye.hannah.movies_stage2.database.FavMoviesTable;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityPosterDetailsBinding;
 import com.squareup.picasso.Picasso;
 
@@ -26,15 +25,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
     private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
-    private static final String DATABASE_NAME = "movies_db2";
-    private FavMovieDatabase favmovieDatabase;
+    //private static final String DATABASE_NAME = "movies_db2";
+    //private FavMovieDatabase favmovieDatabase;
+    DaoAccess messageDao;
+    FavMoviesTable favmoviestable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,34 +50,26 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvTitle.setText(title);
             posterBinding.tvRating.setText(getString(R.string.rating_title)+" "+rating);
             posterBinding.tvDescription.setText(description);
+            messageDao = (DaoAccess) AppDatabase.getInstance(getApplicationContext()).message();
+
+
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            favmovieDatabase = Room.databaseBuilder(getApplicationContext(),
+            /*favmovieDatabase = Room.databaseBuilder(getApplicationContext(),
                     FavMovieDatabase.class, DATABASE_NAME)
-                    .build();
+                    .build();*/
 
 
             posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     new Thread(new Runnable() {
-                         @Override
-                         public void run() {
-
-                             FavMoviesTable favmoviestable = new FavMoviesTable();
-                             favmoviestable.setMovieId( id);
-                             favmoviestable.setMovieName(title);
-                             favmovieDatabase.daoAccess ()
-                                     .insertOnlySingleMovie
-                                             (favmoviestable);
-
-                             String itemFavourited = favmovieDatabase.daoAccess()
-                                     .fetchOneMoviesbyMovieId(Integer.parseInt(id)).getMovieName();
-                             Log.i("Added to DB", itemFavourited);
-
-                         }
-                     }) .start();
+                     favmoviestable = new FavMoviesTable(id, title, posterUrl);
+                     favmoviestable.setMovieId(id);
+                     favmoviestable.setMovieName(title);
+                     favmoviestable.setMovieName(posterUrl);
+                     messageDao.insertOnlySingleMovie(favmoviestable);
                  }
+
              }
             );
             new showTrailer().execute();

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.intuit.sdp:sdp-android-1.0.3">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.3.aar/b5f8479f3458cd780056d066f2aaec7f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.3.aar/b5f8479f3458cd780056d066f2aaec7f/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
