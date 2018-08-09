@@ -2,6 +2,7 @@ package com.olukoye.hannah.movies_stage2.adapter;
 
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,11 @@ import java.util.List;
 
 public class FavMovieAdapter extends RecyclerView.Adapter<FavMovieViewHolder> {
 
-    private List<FavMoviesTable> messageList;
+    private List<FavMoviesTable> favList;
     private Context context;
 
-    public FavMovieAdapter(Context context, List<FavMoviesTable> messageList) {
-        this.messageList = messageList;
+    public FavMovieAdapter(Context context, List<FavMoviesTable> favList) {
+        this.favList = favList;
         this.context = context;
     }
 
@@ -32,7 +33,7 @@ public class FavMovieAdapter extends RecyclerView.Adapter<FavMovieViewHolder> {
 
     @Override
     public void onBindViewHolder(FavMovieViewHolder holder, int position) {
-        FavMoviesTable favMovie = messageList.get(position);
+        FavMoviesTable favMovie = favList.get(position);
 
         //holder.content.setText(favMovie.getMovieId());
         final String imageUrl = favMovie.getPoster();
@@ -45,7 +46,7 @@ public class FavMovieAdapter extends RecyclerView.Adapter<FavMovieViewHolder> {
 
     @Override
     public int getItemCount() {
-        return messageList.size();
+        return favList.size();
     }
 
 

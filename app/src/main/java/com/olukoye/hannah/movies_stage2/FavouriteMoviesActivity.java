@@ -18,7 +18,7 @@ import java.util.List;
 
 public class FavouriteMoviesActivity extends AppCompatActivity {
     private ActivityFavouriteMoviesBinding favBinding;
-
+    private DaoAccess favDao;
     private FavMovieAdapter favMovieAdapter;
 
 
@@ -34,8 +34,8 @@ public class FavouriteMoviesActivity extends AppCompatActivity {
             favBinding.favrecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         }
 
-        DaoAccess messageDao = (DaoAccess) AppDatabase.getInstance(getApplicationContext()).message();
-        messageDao.fetchAllMovies().observe(this, (List<FavMoviesTable> message) -> {
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+        favDao.fetchAllMovies().observe(this, (List<FavMoviesTable> message) -> {
             favMovieAdapter = new FavMovieAdapter(FavouriteMoviesActivity.this, message);
             favBinding.favrecyclerView.setAdapter(favMovieAdapter);
         });
