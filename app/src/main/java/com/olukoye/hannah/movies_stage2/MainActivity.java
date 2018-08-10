@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        // Save our own state now
-        outState.putSerializable("list-state", (Serializable) movies);
 
     }
     //To verify internet connection is available
@@ -178,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        savedInstanceState.getSerializable("list-state");
     }
 
 
