@@ -16,6 +16,6 @@ public class FavMovieViewHolder extends RecyclerView.ViewHolder{
     public FavMovieViewHolder(View itemView) {
         super(itemView);
 
-        favImageView = (ImageView)itemView.findViewById(R.id.favImageView);
+        favImageView = itemView.findViewById(R.id.favImageView);
     }
 }

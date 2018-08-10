@@ -49,7 +49,7 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvTitle.setText(title);
             posterBinding.tvRating.setText(getString(R.string.rating_title)+" "+rating);
             posterBinding.tvDescription.setText(description);
-            messageDao = (DaoAccess) AppDatabase.getInstance(getApplicationContext()).message();
+            messageDao = AppDatabase.getInstance(getApplicationContext()).message();
 
 
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
