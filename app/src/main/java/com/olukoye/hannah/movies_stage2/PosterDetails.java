@@ -30,8 +30,7 @@ import java.net.URL;
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
     private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
-    //private static final String DATABASE_NAME = "movies_db2";
-    //private FavMovieDatabase favmovieDatabase;
+
     DaoAccess messageDao;
     FavMoviesTable favmoviestable;
     @Override
@@ -54,11 +53,6 @@ public class PosterDetails extends AppCompatActivity {
 
 
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
-
-            /*favmovieDatabase = Room.databaseBuilder(getApplicationContext(),
-                    FavMovieDatabase.class, DATABASE_NAME)
-                    .build();*/
-
 
             posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
                  @Override
@@ -85,7 +79,6 @@ public class PosterDetails extends AppCompatActivity {
 
         protected String doInBackground(Void... urls) {
             try {
-                ///movie/{movie_id}/videos"
                 URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
                         id + "/videos?"+ "api_key=" + getString(R.string.movie_api_key));
                 Log.i("Url passed", String.valueOf(url));

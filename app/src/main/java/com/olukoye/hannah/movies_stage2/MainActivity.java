@@ -3,6 +3,7 @@ package com.olukoye.hannah.movies_stage2;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -17,6 +18,7 @@ import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.adapter.MovieAdapter;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,10 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter.setMovieList(movies);
 
-
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             popularOrder();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save our own state now
+        outState.putSerializable("list-state", (Serializable) movies);
+
     }
     //To verify internet connection is available
     public Boolean isOnline() {
@@ -125,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(Movie.PopularMovieResult movieResult, Response response) {
                 mAdapter.setMovieList(movieResult.getPopularResults());
-                Log.i("output", movies.toString());
+
             }
 
             @Override
@@ -167,25 +176,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        savedInstanceState.getSerializable("list-state");
+    }
+
+
+    @Override
     protected void onStop() {
         super.onStop();
+
     }
 
 
     @Override
     protected void onPause() {
         super.onPause();
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-    }
+        popularOrder();
 
+    }
     @Override
     protected void onStart() {
         super.onStart();
+        popularOrder();
+
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
