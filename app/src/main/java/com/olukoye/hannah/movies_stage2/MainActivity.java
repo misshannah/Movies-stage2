@@ -1,24 +1,27 @@
 package com.olukoye.hannah.movies_stage2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.adapter.MovieAdapter;
+import com.olukoye.hannah.movies_stage2.database.FavMoviesTable;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter mAdapter;
     private ActivityMainBinding binding;
     private List<Movie> movies;
+    SharedPreferences pref;
 
 
     @Override
@@ -40,16 +44,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         isOnline();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext());
+        pref = getSharedPreferences("MoviePref", MODE_PRIVATE);
 
         binding.recyclerView.setHasFixedSize(true);
         if(binding.recyclerView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            binding.recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
         } else if (binding.recyclerView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+            binding.recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
         }
 
 
-        mAdapter = new MovieAdapter(this);
+       mAdapter = new MovieAdapter(this);
         binding.recyclerView.setAdapter(mAdapter);
         movies = new ArrayList<>();
 
@@ -57,32 +63,31 @@ public class MainActivity extends AppCompatActivity {
             movies.add(new Movie());
         }
 
+        Gson gson = new Gson();
+        String savedList = pref.getString("Movies" , "");
+        movies = gson.fromJson(savedList,
+                new TypeToken<List<Movie>>(){}.getType());
+
         mAdapter.setMovieList(movies);
 
-        if (savedInstanceState == null) {
-            popularOrder();
-        }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
 
     }
+
+
     //To verify internet connection is available
     public Boolean isOnline() {
         try {
-            Process p1 = java.lang.Runtime.getRuntime().exec("ping -c 1 www.google.com");
+            Process p1 = java.lang.Runtime.getRuntime().exec(getString(R.string.ping));
             int returnVal = p1.waitFor();
             boolean reachable = (returnVal == 0);
-            Toast.makeText(getApplicationContext(), "Connected to the Internet!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.internet_connect, Toast.LENGTH_SHORT).show();
 
             return reachable;
         } catch (Exception e) {
 
             e.printStackTrace();
         }
-        Toast.makeText(getApplicationContext(), "Check Internet connection!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.internet_check, Toast.LENGTH_SHORT).show();
         return false;
     }
 
@@ -105,7 +110,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(Movie.RatedMovieResult movieResult, Response response) {
                 mAdapter.setMovieList(movieResult.getRatedResults());
-                Log.i("rating output", movies.toString());
+
+                SharedPreferences.Editor edit = pref.edit();
+                //Storing Data using SharedPreferences
+                Gson gson = new Gson();
+                String json = gson.toJson(movieResult.getRatedResults());
+                edit.putString("Movies", json);
+                edit.apply();
             }
 
             @Override
@@ -132,6 +143,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(Movie.PopularMovieResult movieResult, Response response) {
                 mAdapter.setMovieList(movieResult.getPopularResults());
+                SharedPreferences.Editor edit = pref.edit();
+                //Storing Data using SharedPreferences
+                Gson gson = new Gson();
+                String json = gson.toJson(movieResult.getPopularResults());
+                edit.putString("Movies", json);
+                edit.apply();
 
             }
 
@@ -173,10 +190,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
 
 
     @Override
@@ -195,13 +208,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        popularOrder();
 
     }
     @Override
     protected void onStart() {
         super.onStart();
-        popularOrder();
 
     }
 

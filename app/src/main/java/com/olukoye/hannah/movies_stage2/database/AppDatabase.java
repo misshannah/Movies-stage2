@@ -15,8 +15,19 @@ public abstract class AppDatabase extends RoomDatabase{
 
     private Context context;
 
+    private static final Object LOCK = new Object();
+    public static AppDatabase getInstance(Context context) {
+        if (appDatabase == null) {
+            synchronized (LOCK) {
+                appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "movies_db3")
+                        .allowMainThreadQueries()
+                        .build();
+            }
+        }
 
-    public static AppDatabase getInstance(Context context){
+        return appDatabase;
+    }
+    /*public static AppDatabase getInstance(Context context){
 
         if(appDatabase == null){
             appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "movies_db3")
@@ -24,7 +35,7 @@ public abstract class AppDatabase extends RoomDatabase{
                     .build();
         }
         return appDatabase;
-    }
+    }*/
 
     public static void destroyInstance() {
         appDatabase = null;
