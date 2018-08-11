@@ -2,6 +2,7 @@ package com.olukoye.hannah.movies_stage2;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -25,14 +26,17 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
     private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
-
-    DaoAccess messageDao;
+    DaoAccess favDao;
     FavMoviesTable favmoviestable;
+    SharedPreferences pref;
+    String currentFav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,23 +53,67 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvTitle.setText(title);
             posterBinding.tvRating.setText(getString(R.string.rating_title)+" "+rating);
             posterBinding.tvDescription.setText(description);
-            messageDao = AppDatabase.getInstance(getApplicationContext()).message();
+
 
 
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     favmoviestable = new FavMoviesTable(id, title, posterUrl);
-                     favmoviestable.setMovieId(id);
-                     favmoviestable.setMovieName(title);
-                     favmoviestable.setMovieName(posterUrl);
-                     messageDao.insertOnlySingleMovie(favmoviestable);
-                 }
+        pref = getSharedPreferences("Favourited", MODE_PRIVATE);
 
-             }
-            );
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+        favDao.fetchAllMoviesIds().observe(this, (List<FavMoviesTable> favmovie) -> {
+
+        for (int i = 0; i < favmovie.size(); i++ ) {
+            currentFav = favmovie.get(i).getMovieId().toString();
+
+            if (currentFav.contains(id)) {
+                // check current state of a toggle button (true or false).
+                Log.d("Present ID:", id);
+                posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+                posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+                        favmoviestable.setMovieId(id);
+                        favmoviestable.setMovieName(title);
+                        favmoviestable.setMovieName(posterUrl);
+                        favDao.deleteFavMovies(favmoviestable);
+
+                        posterBinding.favouriteButton.setText(getString(R.string.fav_text));
+
+                    }
+
+                });
+            } else {
+                posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
+                                                                     @Override
+                                                                     public void onClick(View v) {
+                                                                         favmoviestable = new FavMoviesTable(id, title, posterUrl);
+                                                                         favmoviestable.setMovieId(id);
+                                                                         favmoviestable.setMovieName(title);
+                                                                         favmoviestable.setMovieName(posterUrl);
+                                                                         favDao.insertOnlySingleMovie(favmoviestable);
+
+                                                                         posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+
+                                                                         SharedPreferences.Editor edit = pref.edit();
+                                                                         edit.putString("Favourited", id);
+                                                                         edit.apply();
+
+
+                                                                     }
+
+                                                                 }
+                );
+            }
+        }
+
+        });
+
+
+
             new showTrailer().execute();
             new getReviews().execute();
         }

@@ -40,8 +40,8 @@ public class FavMovieAdapter extends RecyclerView.Adapter<FavMovieViewHolder> {
         // This is how we use Picasso to load images from the internet.
         Picasso.with(context)
                 .load(imageUrl)
+                .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.favImageView);
-
     }
 
     @Override

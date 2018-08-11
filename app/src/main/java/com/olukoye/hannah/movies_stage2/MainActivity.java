@@ -19,7 +19,6 @@ import com.google.gson.reflect.TypeToken;
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.adapter.MovieAdapter;
-import com.olukoye.hannah.movies_stage2.database.FavMoviesTable;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 new TypeToken<List<Movie>>(){}.getType());
 
         mAdapter.setMovieList(movies);
-
 
     }
 
@@ -191,33 +189,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
