@@ -24,6 +24,9 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'MOVIE_API_KEY', myApi
+    }
 }
 
 dependencies {

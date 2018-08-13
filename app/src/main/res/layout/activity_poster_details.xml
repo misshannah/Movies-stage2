@@ -32,6 +32,7 @@
             <Button
                 android:id="@+id/favourite_button"
                 android:layout_weight=".1"
+                android:clickable="true"
                 android:background="@color/colorPrimary"
                 android:text="@string/fav_text"
                 android:textColor="@android:color/white"

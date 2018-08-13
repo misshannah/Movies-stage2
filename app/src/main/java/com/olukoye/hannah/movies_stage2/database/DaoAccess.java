@@ -18,18 +18,13 @@ public interface DaoAccess {
     @Insert(onConflict = OnConflictStrategy.REPLACE)  // or OnConflictStrategy.IGNORE
     void insertOnlySingleMovie(FavMoviesTable... favMoviesTable);
 
+    //Get All Movies on Favourite List
     @Query("SELECT movieId FROM FavMoviesTable")
     LiveData<List<FavMoviesTable>> fetchAllMoviesIds();
 
-    //Get All Movies on Favourite List
     @Query("SELECT * FROM FavMoviesTable")
     LiveData<List<FavMoviesTable>> fetchAllMovies();
 
-
-    //FavMoviesTable fetchAllMovies ();
-
-    @Query("SELECT * FROM FavMoviesTable")
-    List<FavMoviesTable> fetchAllMoviesold ();
 
     //Delete Movie from Favourite List
     @Delete

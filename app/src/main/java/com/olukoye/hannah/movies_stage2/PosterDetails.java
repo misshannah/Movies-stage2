@@ -36,11 +36,17 @@ public class PosterDetails extends AppCompatActivity {
     FavMoviesTable favmoviestable;
     SharedPreferences pref;
     String currentFav;
+    String movieApiKey = BuildConfig.MOVIE_API_KEY;
+    boolean mFav = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         posterBinding = DataBindingUtil.setContentView(this, R.layout.activity_poster_details);
+
+        pref = getSharedPreferences("FavouriteMovies", MODE_PRIVATE);
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -53,66 +59,50 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvTitle.setText(title);
             posterBinding.tvRating.setText(getString(R.string.rating_title)+" "+rating);
             posterBinding.tvDescription.setText(description);
-
-
-
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-        pref = getSharedPreferences("Favourited", MODE_PRIVATE);
+            favDao.fetchAllMoviesIds().observe(PosterDetails.this, (List<FavMoviesTable> favmovie) -> {
 
-        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+                for (int i = 0; i < favmovie.size(); i++) {
+                    currentFav = favmovie.get(i).getMovieId().toString();
+                    if (currentFav.contains(id)) {
+                        Log.d("Present ID:", id);
+                        posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+                        mFav = true;
+                    } else {
+                        mFav = false;
+                    }
+                }
+            });
+            favmoviestable = new FavMoviesTable(id, title, posterUrl);
 
-        favDao = AppDatabase.getInstance(getApplicationContext()).message();
-        favDao.fetchAllMoviesIds().observe(this, (List<FavMoviesTable> favmovie) -> {
 
-        for (int i = 0; i < favmovie.size(); i++ ) {
-            currentFav = favmovie.get(i).getMovieId().toString();
+            posterBinding.favouriteButton.setOnClickListener(v -> {
 
-            if (currentFav.contains(id)) {
-                // check current state of a toggle button (true or false).
-                Log.d("Present ID:", id);
-                posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
-                posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+                    if (mFav) {
                         favmoviestable.setMovieId(id);
                         favmoviestable.setMovieName(title);
                         favmoviestable.setMovieName(posterUrl);
                         favDao.deleteFavMovies(favmoviestable);
 
                         posterBinding.favouriteButton.setText(getString(R.string.fav_text));
+                        SharedPreferences.Editor edit = pref.edit();
+                        edit.remove("FavouriteMovies");
+                        edit.apply();
 
+                    } else {
+                        favmoviestable.setMovieId(id);
+                        favmoviestable.setMovieName(title);
+                        favmoviestable.setMovieName(posterUrl);
+                        favDao.insertOnlySingleMovie(favmoviestable);
+
+                        posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+
+                        SharedPreferences.Editor edit = pref.edit();
+                        edit.putString("FavouriteMovies", id);
+                        edit.apply();
                     }
-
-                });
-            } else {
-                posterBinding.favouriteButton.setOnClickListener(new View.OnClickListener() {
-                                                                     @Override
-                                                                     public void onClick(View v) {
-                                                                         favmoviestable = new FavMoviesTable(id, title, posterUrl);
-                                                                         favmoviestable.setMovieId(id);
-                                                                         favmoviestable.setMovieName(title);
-                                                                         favmoviestable.setMovieName(posterUrl);
-                                                                         favDao.insertOnlySingleMovie(favmoviestable);
-
-                                                                         posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
-
-                                                                         SharedPreferences.Editor edit = pref.edit();
-                                                                         edit.putString("Favourited", id);
-                                                                         edit.apply();
-
-
-                                                                     }
-
-                                                                 }
-                );
-            }
-        }
-
-        });
-
-
+            });
 
             new showTrailer().execute();
             new getReviews().execute();
@@ -128,7 +118,7 @@ public class PosterDetails extends AppCompatActivity {
         protected String doInBackground(Void... urls) {
             try {
                 URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
-                        id + "/videos?"+ "api_key=" + getString(R.string.movie_api_key));
+                        id + "/videos?"+ "api_key=" + movieApiKey);
                 Log.i("Url passed", String.valueOf(url));
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
@@ -201,7 +191,7 @@ public class PosterDetails extends AppCompatActivity {
             try {
                 ///movie/{movie_id}/videos"
                 URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
-                        id + "/reviews?"+ "api_key=" + getString(R.string.movie_api_key));
+                        id + "/reviews?"+ "api_key=" + movieApiKey);
                 Log.i("Url passed", String.valueOf(url));
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
