@@ -12,8 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,7 +21,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.olukoye.hannah.movies_stage2.Interfaces.MoviesInterfaceApi;
 import com.olukoye.hannah.movies_stage2.Interfaces.RatedMoviesInterfaceApi;
+import com.olukoye.hannah.movies_stage2.adapter.FavMovieAdapter;
 import com.olukoye.hannah.movies_stage2.adapter.MovieAdapter;
+import com.olukoye.hannah.movies_stage2.database.AppDatabase;
+import com.olukoye.hannah.movies_stage2.database.DaoAccess;
+import com.olukoye.hannah.movies_stage2.database.FavMoviesTable;
 import com.olukoye.hannah.movies_stage2.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> movies;
     SharedPreferences pref;
     String movieApiKey = BuildConfig.MOVIE_API_KEY;
+    private DaoAccess favDao;
+    private FavMovieAdapter favMovieAdapter;
 
 
 
@@ -156,8 +160,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showFavourites() {
-        Intent openFavourites = new Intent(getApplication(), FavouriteMoviesActivity.class);
-        startActivity(openFavourites);
+
+
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+        favDao.fetchAllMovies().observe(this, (List<FavMoviesTable> favmovie) -> {
+            favMovieAdapter = new FavMovieAdapter(MainActivity.this, favmovie);
+
+            binding.recyclerView.setAdapter(favMovieAdapter);
+
+        });
     }
 
     //Show Settings Menu
@@ -186,26 +197,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Gson gson = new Gson();
 
-        String savedList = pref.getString("Movies" , "");
-        movies = gson.fromJson(savedList,
-                new TypeToken<List<Movie>>(){}.getType());
-
-        mAdapter.setMovieList(movies);
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Gson gson = new Gson();
-
-        String savedList = pref.getString("Movies" , "");
-        movies = gson.fromJson(savedList,
-                new TypeToken<List<Movie>>(){}.getType());
-
-        mAdapter.setMovieList(movies);
-    }
 }

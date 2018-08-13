@@ -19,7 +19,8 @@ public abstract class AppDatabase extends RoomDatabase{
     public static AppDatabase getInstance(Context context) {
         if (appDatabase == null) {
             synchronized (LOCK) {
-                appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "movies_db3")
+                appDatabase = Room.databaseBuilder(context.getApplicationContext(),
+                        AppDatabase.class, "movies_db4")
                         .allowMainThreadQueries()
                         .build();
             }

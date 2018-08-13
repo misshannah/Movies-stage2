@@ -31,7 +31,7 @@ import java.util.List;
 
 public class PosterDetails extends AppCompatActivity {
     private ActivityPosterDetailsBinding posterBinding;
-    private String title,description,rating,posterUrl,id,video_key,reviewText,reviewAuthor;
+    private String title, description, rating, posterUrl, id, video_key, reviewText, reviewAuthor;
     DaoAccess favDao;
     FavMoviesTable favmoviestable;
     SharedPreferences pref;
@@ -63,59 +63,67 @@ public class PosterDetails extends AppCompatActivity {
                 }
             }
         });
-            title = bundle.getString("title");
-            description = bundle.getString("description");
-            rating = bundle.getString("rating");
-            posterUrl = bundle.getString("posterurl");
-            id = bundle.getString("movie_id");
+        title = bundle.getString("title");
+        description = bundle.getString("description");
+        rating = bundle.getString("rating");
+        posterUrl = bundle.getString("posterurl");
+        id = bundle.getString("movie_id");
 
-            posterBinding.tvTitle.setText(title);
-            posterBinding.tvRating.setText(getString(R.string.rating_title)+" "+rating);
+        posterBinding.tvTitle.setText(title);
+        if (rating != null) {
+            posterBinding.tvRating.setText(getString(R.string.rating_title) + " " + rating);
+        } else {
+            posterBinding.tvRating.setVisibility(View.INVISIBLE);
+        }
+        if (description != null) {
             posterBinding.tvDescription.setText(description);
-            Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
+        } else {
+            posterBinding.tvDescription.setVisibility(View.INVISIBLE);
+        }
+        Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            posterBinding.favouriteButton.setOnClickListener(v -> {
+        posterBinding.favouriteButton.setOnClickListener(v -> {
 
-                    if (mFav) {
-                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+            if (mFav) {
+                favmoviestable = new FavMoviesTable(id, title, posterUrl);
 
-                        favmoviestable.setMovieId(id);
-                        favmoviestable.setMovieName(title);
-                        favmoviestable.setMovieName(posterUrl);
-                        favDao.deleteFavMovies(favmoviestable);
+                favmoviestable.setMovieId(id);
+                favmoviestable.setMovieName(title);
+                favmoviestable.setMovieName(posterUrl);
+                favDao.deleteFavMovies(favmoviestable);
 
-                        posterBinding.favouriteButton.setText(getString(R.string.fav_text));
+                posterBinding.favouriteButton.setText(getString(R.string.fav_text));
 
 
-                    } else {
-                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+            } else {
+                favmoviestable = new FavMoviesTable(id, title, posterUrl);
 
-                        favmoviestable.setMovieId(id);
-                        favmoviestable.setMovieName(title);
-                        favmoviestable.setMovieName(posterUrl);
-                        favDao.insertOnlySingleMovie(favmoviestable);
+                favmoviestable.setMovieId(id);
+                favmoviestable.setMovieName(title);
+                favmoviestable.setMovieName(posterUrl);
+                favDao.insertOnlySingleMovie(favmoviestable);
 
-                        posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+                posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
 
-                        edit.putString("FavouriteMovies", id);
-                        edit.apply();
-                    }
-            });
+                edit.putString("FavouriteMovies", id);
+                edit.apply();
+            }
+        });
 
-            new showTrailer().execute();
-            new getReviews().execute();
+        new showTrailer().execute();
+        new getReviews().execute();
 
     }
 
     public class showTrailer extends AsyncTask<Void, Void, String> {
         protected void onPreExecute() {
-            Log.i("Background Task","Loading Trailer details");
+            Log.i("Background Task", "Loading Trailer details");
         }
 
         protected String doInBackground(Void... urls) {
             try {
                 URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
-                        id + "/videos?"+ "api_key=" + movieApiKey);
+                        id + "/videos?" + "api_key=" + movieApiKey);
                 Log.i("Url passed", String.valueOf(url));
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
@@ -179,16 +187,17 @@ public class PosterDetails extends AppCompatActivity {
 
         }
     }
+
     public class getReviews extends AsyncTask<Void, Void, String> {
         protected void onPreExecute() {
-            Log.i("Background Task","Loading Reviews");
+            Log.i("Background Task", "Loading Reviews");
         }
 
         protected String doInBackground(Void... urls) {
             try {
                 ///movie/{movie_id}/videos"
                 URL url = new URL(getString(R.string.movie_url_base) + "/movie/" +
-                        id + "/reviews?"+ "api_key=" + movieApiKey);
+                        id + "/reviews?" + "api_key=" + movieApiKey);
                 Log.i("Url passed", String.valueOf(url));
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
@@ -231,7 +240,7 @@ public class PosterDetails extends AppCompatActivity {
                 reviewAuthor = reviewData.getString("author");
 
                 posterBinding.tvReview.setText(reviewText);
-                posterBinding.tvReviewAuthor.setText(getString(R.string.author_title)+": "+reviewAuthor);
+                posterBinding.tvReviewAuthor.setText(getString(R.string.author_title) + ": " + reviewAuthor);
 
 
             } catch (JSONException e) {

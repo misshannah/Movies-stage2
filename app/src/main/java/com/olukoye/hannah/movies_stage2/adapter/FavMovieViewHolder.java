@@ -11,11 +11,11 @@ import com.olukoye.hannah.movies_stage2.R;
 
 public class FavMovieViewHolder extends RecyclerView.ViewHolder{
 
-    public ImageView favImageView;
+    public ImageView imageView;
 
     public FavMovieViewHolder(View itemView) {
         super(itemView);
 
-        favImageView = itemView.findViewById(R.id.favImageView);
+        imageView = itemView.findViewById(R.id.imageView);
     }
 }

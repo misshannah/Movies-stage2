@@ -9,6 +9,8 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 
+import com.olukoye.hannah.movies_stage2.Movie;
+
 import java.util.List;
 
 @Dao
