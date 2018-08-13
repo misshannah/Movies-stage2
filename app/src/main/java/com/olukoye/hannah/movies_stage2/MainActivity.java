@@ -186,5 +186,26 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Gson gson = new Gson();
 
+        String savedList = pref.getString("Movies" , "");
+        movies = gson.fromJson(savedList,
+                new TypeToken<List<Movie>>(){}.getType());
+
+        mAdapter.setMovieList(movies);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Gson gson = new Gson();
+
+        String savedList = pref.getString("Movies" , "");
+        movies = gson.fromJson(savedList,
+                new TypeToken<List<Movie>>(){}.getType());
+
+        mAdapter.setMovieList(movies);
+    }
 }

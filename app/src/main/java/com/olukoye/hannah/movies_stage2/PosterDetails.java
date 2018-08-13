@@ -37,7 +37,7 @@ public class PosterDetails extends AppCompatActivity {
     SharedPreferences pref;
     String currentFav;
     String movieApiKey = BuildConfig.MOVIE_API_KEY;
-    boolean mFav = true;
+    boolean mFav;
 
 
     @Override
@@ -46,10 +46,23 @@ public class PosterDetails extends AppCompatActivity {
         posterBinding = DataBindingUtil.setContentView(this, R.layout.activity_poster_details);
 
         pref = getSharedPreferences("FavouriteMovies", MODE_PRIVATE);
-        favDao = AppDatabase.getInstance(getApplicationContext()).message();
-
+        SharedPreferences.Editor edit = pref.edit();
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
+
+        favDao = AppDatabase.getInstance(getApplicationContext()).message();
+        favDao.fetchAllMoviesIds().observe(PosterDetails.this, (List<FavMoviesTable> favmovie) -> {
+
+            for (int i = 0; i < favmovie.size(); i++) {
+                currentFav = favmovie.get(i).getMovieId().toString();
+                if (currentFav.contains(id)) {
+                    Log.d("Present ID:", id);
+                    posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
+                    mFav = true;
+                } else {
+                    mFav = false;
+                }
+            }
+        });
             title = bundle.getString("title");
             description = bundle.getString("description");
             rating = bundle.getString("rating");
@@ -61,36 +74,22 @@ public class PosterDetails extends AppCompatActivity {
             posterBinding.tvDescription.setText(description);
             Picasso.with(this).load(posterUrl).into(posterBinding.ivThumbnail);
 
-            favDao.fetchAllMoviesIds().observe(PosterDetails.this, (List<FavMoviesTable> favmovie) -> {
-
-                for (int i = 0; i < favmovie.size(); i++) {
-                    currentFav = favmovie.get(i).getMovieId().toString();
-                    if (currentFav.contains(id)) {
-                        Log.d("Present ID:", id);
-                        posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
-                        mFav = true;
-                    } else {
-                        mFav = false;
-                    }
-                }
-            });
-            favmoviestable = new FavMoviesTable(id, title, posterUrl);
-
-
             posterBinding.favouriteButton.setOnClickListener(v -> {
 
                     if (mFav) {
+                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+
                         favmoviestable.setMovieId(id);
                         favmoviestable.setMovieName(title);
                         favmoviestable.setMovieName(posterUrl);
                         favDao.deleteFavMovies(favmoviestable);
 
                         posterBinding.favouriteButton.setText(getString(R.string.fav_text));
-                        SharedPreferences.Editor edit = pref.edit();
-                        edit.remove("FavouriteMovies");
-                        edit.apply();
+
 
                     } else {
+                        favmoviestable = new FavMoviesTable(id, title, posterUrl);
+
                         favmoviestable.setMovieId(id);
                         favmoviestable.setMovieName(title);
                         favmoviestable.setMovieName(posterUrl);
@@ -98,7 +97,6 @@ public class PosterDetails extends AppCompatActivity {
 
                         posterBinding.favouriteButton.setText(getString(R.string.fav_text_selected));
 
-                        SharedPreferences.Editor edit = pref.edit();
                         edit.putString("FavouriteMovies", id);
                         edit.apply();
                     }
@@ -106,7 +104,6 @@ public class PosterDetails extends AppCompatActivity {
 
             new showTrailer().execute();
             new getReviews().execute();
-        }
 
     }
 
